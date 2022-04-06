@@ -388,12 +388,12 @@ call plug#begin()
 
 call plug#end()
 
-"auto switch input method 
+" auto switch input method 
 autocmd! InsertLeave * set imdisable
 autocmd! InsertEnter * set noimdisable
 
-# show line number
+" show line number
 set number
 
-# set line number color
+" set line number color
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
