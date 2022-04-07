@@ -385,7 +385,8 @@ endfunction
 " my vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
-
+Plug 'preservim/nerdtree'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 call plug#end()
 
 " auto switch input method 
@@ -397,3 +398,9 @@ set number
 
 " set line number color
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" close LeaderF search list icon
+let g:Lf_ShowDevIcons = 0
+
+" cancel default clipboard
+set clipboard=unnamed
