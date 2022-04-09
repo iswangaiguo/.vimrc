@@ -138,13 +138,15 @@ syntax enable
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
+ 
 try
-    colorscheme desert
+    " the function let macvim_skip_colorscheme=1 not work 
+    " the line below should be written to .gvim in case macvim scheme takes effect
+    colorscheme dracula
 catch
 endtry
 
-set background=dark
+" set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -381,12 +383,15 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " my vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'tpope/vim-surround'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " auto switch input method 
@@ -397,10 +402,11 @@ autocmd! InsertEnter * set noimdisable
 set number
 
 " set line number color
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " close LeaderF search list icon
 let g:Lf_ShowDevIcons = 0
 
 " cancel default clipboard
 set clipboard=unnamed
+
